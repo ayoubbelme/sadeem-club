@@ -1,0 +1,6 @@
+export {default as Container} from './Container/Container'
+export {default as who} from './who/who'
+export {default as Workshops} from './Workshops/Workshops'
+export {default as Courses} from './Courses/Courses'
+export {default as ContactUs} from './ContactUs/ContactUs'
+export {default as Activities} from './Activities/Activities'

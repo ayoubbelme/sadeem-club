@@ -1,0 +1,12 @@
+#who{border-radius: 51% 49% 63% 37% / 35% 63% 37% 65% ;}
+.animate-fade-in {
+    animation: fade-in 2s ease-out;
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
