@@ -39,7 +39,7 @@ const Workshops = () => {
             <div className="flex justify-center mt-12">
                 <button
                     type="button"
-                    className="text-primary hover:bg-primary font-medium rounded-3xl text-base px-6 py-3 text-center dark:bg-secondary dark:hover:bg-gray-900 dark:focus:ring-gray-900 border-solid border-2 border-primary hover:text-white transition"
+                    className="text-primary hover:bg-primary font-medium rounded-3xl text-base px-6 py-3 text-center border-solid border-2 border-primary hover:text-white transition"
                 >
                     <a href='/WorkShops' className='bg-transparent'>قائمة الورشات</a>
                 </button>
