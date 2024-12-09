@@ -1,29 +1,37 @@
 import React, { useState } from 'react';
 import './Courses.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileWord, faFilePowerpoint, faFileExcel } from '@fortawesome/free-solid-svg-icons';
+import { faFileWord, faFilePowerpoint, faFileExcel, faPalette } from '@fortawesome/free-solid-svg-icons';
 
 const icons = [
     { 
         icon: faFileWord, 
         alt: 'Word Course',
         title: 'Word tutorial',
-        description: 'غير متاحة حاليا',
         color: '#2B579A', // Word Blue
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSfc8JuTb6AtsLgOHOXvfyL_M-BrOvKy-UYzhLOcHSPsXGHNAg/viewform?usp=header',
+        
     },
     { 
         icon: faFilePowerpoint, 
         alt: 'PowerPoint Course',
         title: 'PowerPoint tutorial',
-        description: 'غير متاحة حاليا',
         color: '#D24726', // PowerPoint Orange
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSfc8JuTb6AtsLgOHOXvfyL_M-BrOvKy-UYzhLOcHSPsXGHNAg/viewform?usp=header',
     },
     { 
         icon: faFileExcel, 
         alt: 'Excel Course',
         title: 'Excel tutorial',
-        description: 'غير متاحة حاليا',
         color: '#217346', // Excel Green
+        link: 'https://docs.google.com/forms/d/e/1FAIpQLSfc8JuTb6AtsLgOHOXvfyL_M-BrOvKy-UYzhLOcHSPsXGHNAg/viewform?usp=header',
+    },
+    { 
+        icon: faPalette, 
+        alt: 'Design Course',
+        title: 'Design Course',
+        color: '#F28B02', // Design Orange
+        link: null, // No link for Design Course
     },
 ];
 
@@ -38,17 +46,28 @@ const Courses = () => {
         setSelectedCourse(null);
     };
 
+    const handleClick = (course) => {
+        if (course.link) {
+            // Navigate to the link if it's provided
+            window.location.href = course.link;
+        } else {
+            // Open the modal if there's no link
+            handleModalOpen(course);
+        }
+    };
+
     return (
         <>
             <h1 className="text-4xl font-semibold text-gray-800 mb-6 mt-28 text-center" id="courses">
                 الدورات التي نقدمها
             </h1>
-            <div className="grid grid-cols-3 md:grid-cols-3 gap-10 p-6 md:mx-60 mx-50">
+            <div className="grid grid-cols-3 md:grid-cols-3 gap-10 p-6 md:mx-60 mx-50" >
                 {icons.map((iconData, index) => (
                     <div
+                    
                         key={index}
                         className="relative group overflow-hidden rounded-lg shadow-lg h-24 sm:h-56 md:h-48 lg:h-20 cursor-pointer flex items-center justify-center"
-                        onClick={() => handleModalOpen(iconData)}
+                        onClick={() => handleClick(iconData)} // Handle click logic here
                         style={{ backgroundColor: iconData.color, color: 'white' }}
                     >
                         <FontAwesomeIcon 
@@ -56,7 +75,7 @@ const Courses = () => {
                             className="text-6xl group-hover:scale-105 transition-transform duration-300 bg-transparent"
                         />
                         <button
-                            className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out text-white font-semibold text-2xl"
+                            className="absolute inset-0 flex items-center justify-center bg-transparent bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out text-black font-bold text-2xl"
                         >
                             سجل الان
                         </button>
@@ -80,7 +99,11 @@ const Courses = () => {
                             className="text-6xl mb-4 bg-transparent" 
                             style={{ color: selectedCourse.color }}
                         />
-                        <p className="text-red-400 font-extrabold text-xl bg-transparent">{selectedCourse.description}</p>
+                        <p className="text-red-400 font-extrabold text-xl bg-transparent">
+                            {selectedCourse.title === "Design Course"
+                                ? "هذه الدورة غير متاحة حاليا"
+                                : "اضغط سجل الآن "}
+                        </p>
                         <button
                             onClick={handleModalClose}
                             className="mt-6 px-6 py-2 bg-primary text-white rounded-lg hover:bg-third transition"
