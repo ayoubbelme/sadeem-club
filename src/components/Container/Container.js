@@ -41,7 +41,7 @@ const Container = () => {
                 
                 <div className="w-full lg:w-1/2 flex flex-col items-end">
                     <h1 className={"text-4xl font-bold text-gray-800 mb-4 "} ref={textRef}>
-                        نادي سديم يرحب بالجميع
+                        نادي <span className='text-primary text-6xl font-bold'>سديم</span> يرحب بالجميع
                     </h1>
                     <p className={`text-gray-600 text-lg mb-6 text-right ${isVisible ? 'animate-slide-in' : 'opacity-0'}`}>
                         نادي تربوي علمي ثقافي يسعى لتقديم برامج و فعاليات ممتعة و انشاء جو مميز
