@@ -13,7 +13,7 @@ const Work = () => {
             </Helmet>
           
             <button
-                onClick={() => navigate('/')}
+                onClick={() => navigate('/home')}
                 className="absolute top-0 -left-2 md:top-0 md:left-0 bg-primary text-white px-4 py-2 rounded-br-full shadow-lg hover:bg-third transition"
             >
                 العودة إلى الصفحة الرئيسية

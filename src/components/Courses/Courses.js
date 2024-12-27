@@ -9,23 +9,22 @@ const icons = [
         alt: 'Word Course',
         title: 'Word tutorial',
         color: '#2B579A', // Word Blue
-        link: 'https://docs.google.com/forms/d/e/1FAIpQLSfc8JuTb6AtsLgOHOXvfyL_M-BrOvKy-UYzhLOcHSPsXGHNAg/viewform?usp=header',
-        
+        link: null,        
     },
     { 
         icon: faFilePowerpoint, 
         alt: 'PowerPoint Course',
         title: 'PowerPoint tutorial',
         color: '#D24726', // PowerPoint Orange
-        link: 'https://docs.google.com/forms/d/e/1FAIpQLSfc8JuTb6AtsLgOHOXvfyL_M-BrOvKy-UYzhLOcHSPsXGHNAg/viewform?usp=header',
-    },
+        link: null,
+        },
     { 
         icon: faFileExcel, 
         alt: 'Excel Course',
         title: 'Excel tutorial',
         color: '#217346', // Excel Green
-        link: 'https://docs.google.com/forms/d/e/1FAIpQLSfc8JuTb6AtsLgOHOXvfyL_M-BrOvKy-UYzhLOcHSPsXGHNAg/viewform?usp=header',
-    },
+        link: null,
+        },
     { 
         icon: faPalette, 
         alt: 'Design Course',

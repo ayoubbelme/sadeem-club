@@ -4,6 +4,14 @@ module.exports = {
   './public/index.html',],
   theme: {
     extend: {
+      animation: {
+        fadeIn: 'fadeIn 1s ease-in forwards',
+      },keyframes: {
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
+      },
       colors:{
         primary:'#664343',
         secondary:'#9A7E6F',

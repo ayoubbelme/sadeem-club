@@ -14,7 +14,7 @@ const Header = () => {
         <nav className="bg-gray-200 border-gray-200">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 {/* Logo Section */}
-                <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+                <a href="/home" className="flex items-center space-x-3 rtl:space-x-reverse">
                     <span className="self-center text-5xl text-primary whitespace-nowrap font-body">Sadeem</span>
                 </a>
 
@@ -92,7 +92,7 @@ const Header = () => {
                         </li>
                         <li>
                             <a
-                                href="/"
+                                href="/home"
                                 className="text-lg block py-2 px-3 md:p-0 text-primary bg-text-primary rounded md:bg-transparent md:text-primary hover:underline"
                                 aria-current="page"
                             >

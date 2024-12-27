@@ -18,7 +18,7 @@ const Bac = () => {
             </Helmet>
             
             <button
-                onClick={() => navigate('/')}
+                onClick={() => navigate('/home')}
                 className="absolute -top-10 left-0 md:-top-10 md:left-0 bg-primary text-white px-6 py-2 rounded-br-full shadow-lg hover:bg-third transition"
             >
                 العودة إلى الصفحة الرئيسية
