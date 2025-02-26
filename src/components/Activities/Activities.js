@@ -1,40 +1,44 @@
-import React from 'react';
-import './Activities.css';
-import activityImage from '../../assets/images/activities/undraw_date_picker_re_r0p8 (1).svg';
+import React from "react";
+import { FaCheckCircle } from "react-icons/fa";
+
+const events = [
+  { id: 1, title: "رحلة الرصد الفلكي", date: "February 28, 2025", description: "رحلة لأعضاء النادي لرصد هلال شهر رمضان" },
+  
+];
 
 const Activities = () => {
-    return (
-        <>
-            <h1 className="text-4xl font-bold text-gray-800 mb-6 text-center mt-16" id="Activities">أنشطتنا</h1>
+  return (
+    <div className=" py-12">
+      <div className="max-w-5xl mx-auto px-6">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+          النشاطات القادمة
+        </h2>
+        
+        <div className="relative border-l-4 border-gray-300 pl-6 ">
+          {events.map((event, index) => (
+            <div key={event.id} className="mb-8 relative">
+              {/* Timeline Circle */}
+              <div className="absolute left-[-1.3rem] top-2 bg-white rounded-full flex items-center justify-center">
+                <FaCheckCircle className="text-primary text-xl" />
+              </div>
 
-            <div className="container mx-auto p-6 flex flex-col md:flex-row items-center md:items-start gap-8">
-                <div className="w-full md:w-1/2">
-                    <img
-                        src={activityImage}
-                        alt="Activities"
-                        className="w-full h-auto object-cover"
-                    />
-                </div>
+              {/* Event Content */}
+              <div className="p-6 rounded-lg shadow-md bg-white">
+                <h3 className="text-xl font-semibold text-gray-800">{event.title}</h3>
+                <p className="text-sm text-gray-500">{event.date}</p>
+                <p className="text-gray-600 mt-2">{event.description}</p>
+              </div>
 
-                <div className="w-full md:w-1/2 space-y-4">
-                    <ul className="list-disc list-inside space-y-14" dir="rtl">
-                        <li className="li hover:scale-105 transition duration-200 ease-in-out text-lg font-medium cursor-pointer list-none sm:py-30">
-                            <a className='bg-transparent ' href='/Bac'> حملة أرشدني</a>
-                        </li>
-                        <li className="li hover:scale-105 transition duration-200 ease-in-out text-lg font-medium cursor-pointer list-none ">
-                            <a className='bg-transparent ' href='/WorkShops'> الورشات المقدمة للتلاميذ</a>
-                        </li>
-                        <li className="li hover:scale-105 transition duration-200 ease-in-out text-lg font-medium cursor-pointer list-none ">
-                            <a className='bg-transparent ' href='#courses'> الدورات المفتوحة</a>
-                        </li>
-                        <li className="li hover:scale-105 transition duration-200 ease-in-out text-lg font-medium cursor-pointer list-none text-primary" >
-                            المساهمة في تنظيم نشاطات و خرجات أخرى
-                        </li>
-                    </ul>
-                </div>
+              {/* Connector Line */}
+              {index !== events.length - 1 && (
+                <div className="absolute left-[-0.5rem] top-8 h-full w-1 "></div>
+              )}
             </div>
-        </>
-    );
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Activities;

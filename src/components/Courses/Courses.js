@@ -99,7 +99,7 @@ const Courses = () => {
                             style={{ color: selectedCourse.color }}
                         />
                         <p className="text-red-400 font-extrabold text-xl bg-transparent">
-                            {selectedCourse.title === "Design Course"
+                            {selectedCourse.link === null
                                 ? "هذه الدورة غير متاحة حاليا"
                                 : "اضغط سجل الآن "}
                         </p>

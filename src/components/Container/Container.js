@@ -28,17 +28,19 @@ const Container = () => {
     }, []);
 
     return (
-        <div className="min-h-screen flex items-center justify-center py-12 bg-stone-300">
+        <div className="min-h-screen flex items-center justify-center py-12">
             <div className="container mx-auto md:mx-40 flex flex-col lg:flex-row items-center lg:space-x-10 px-6 ">
                 
+                {/* Logo Section */}
                 <div className="lg:w-1/2 mb-6 lg:mb-0">
                     <img
                         src={logo}
                         alt="sadeem picture"
-                        className="w-40 h-40 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full shadow-lg logo-animation"
+                        className="w-40 h-40 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full shadow-2xl logo-animation" // Added shadow-2xl
                     />
                 </div>
                 
+                {/* Text Section */}
                 <div className="w-full lg:w-1/2 flex flex-col items-end">
                     <h1 className={"text-4xl font-bold text-gray-800 mb-4 "} ref={textRef}>
                         نادي <span className='text-primary'>سديم</span> يرحب بالجميع

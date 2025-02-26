@@ -27,7 +27,7 @@ const Who = () => {
     }, []);
 
     return (
-        <div className="flex flex-col md:flex-row items-center justify-between p-5  mt-20" id="who">
+        <div className="flex flex-col md:flex-row items-center justify-between p-5  mt-4" id="who">
             <div className={`order-2 md:order-1 md:w-1/2 md:mr-5 text-right mt-5 md:mt-0 text-gray-600 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} ref={textRef}>
                 <p className="text-lg leading-relaxed tracking-wide shadow-sm">
                     نادي علمي تربوي ثقافي تأسس في نوفمبر 2022 تابع للجنة التربية و التعليم و التكوين لجمعية كافل اليتيم الوطنية المكتب الولائي بالمدية تأسس على يد نخبة من الطلبة الجامعيين الناشطين في المجال العلمي ينشط على مستوى مركز التسلية العلمية بالمدية 

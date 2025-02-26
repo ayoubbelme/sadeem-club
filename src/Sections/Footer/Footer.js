@@ -2,7 +2,7 @@ import './Footer.css'
 const Footer = () => {
     return (
         <footer className="bg-third text-gray-400 py-8">
-            <div className="container mx-auto px-6 text-center space-y-4 bg-third">
+            <div className="container mx-auto px-6 text-center space-y-4 ">
                 
                 
                
