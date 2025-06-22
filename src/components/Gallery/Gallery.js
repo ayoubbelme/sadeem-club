@@ -29,7 +29,7 @@ export default function PhotoSlider() {
   return (
     <section className="py-20 bg-gradient-to-br overflow-hidden">
       <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-12">
-        ✨ Gallery of Impact
+        ✨ ذكرياتنا
       </h2>
 
       <div className="relative perspective-1000">
