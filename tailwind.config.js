@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        slide: "slide 35s linear infinite",
+        slide: "slide 25s linear infinite",
         fadeIn: 'fadeIn 1s ease-in forwards',
       },keyframes: {
         fadeIn: {

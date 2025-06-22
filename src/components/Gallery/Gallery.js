@@ -37,7 +37,7 @@ export default function PhotoSlider() {
           {duplicatedPhotos.map((src, index) => (
             <div
               key={index}
-              className="group relative w-[240px] h-[200px] md:w-[450px] md:h-[300px] lg:w-[420px] lg:h-[240px] flex-shrink-0 rounded-3xl overflow-hidden transform hover:rotate-[-1.5deg] transition duration-500 shadow-2xl"
+              className="group relative w-[200px] h-[160px] md:w-[450px] md:h-[300px] lg:w-[420px] lg:h-[240px] flex-shrink-0 rounded-3xl overflow-hidden transform hover:rotate-[-1.5deg] transition duration-500 shadow-2xl"
             >
               {/* Blurred background glow */}
               <div
