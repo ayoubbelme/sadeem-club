@@ -84,14 +84,6 @@ const Header = () => {
                         </li>
                         <li>
                             <a
-                                href="#WorkShops"
-                                className="text-lg block py-2 px-3 md:p-0 text-gray-900 rounded hover:underline hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary"
-                            >
-                                الورشات
-                            </a>
-                        </li>
-                        <li>
-                            <a
                                 href="/home"
                                 className="text-lg block py-2 px-3 md:p-0 text-primary bg-text-primary rounded md:bg-transparent md:text-primary hover:underline"
                                 aria-current="page"

@@ -1,6 +1,6 @@
 import Container from '../../components/Container/Container';
 import Who from '../../components/who/who';
-import { Courses,ContactUs,Activities } from '../../components/index';
+import { Courses,ContactUs,Activities, Gallery,Team } from '../../components/index';
 
 
 import './Home.css'
@@ -10,8 +10,11 @@ const Home = () => {
        <>
                 <Container/>
                 <Who/>
+                <Gallery/>
+                <Team/>
                 <Activities/>
                 <Courses/>
+                
                 <ContactUs/>
                 
                 

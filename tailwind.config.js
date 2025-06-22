@@ -5,12 +5,20 @@ module.exports = {
   theme: {
     extend: {
       animation: {
+        slide: "slide 50s linear infinite",
         fadeIn: 'fadeIn 1s ease-in forwards',
       },keyframes: {
         fadeIn: {
           '0%': { opacity: 0 },
           '100%': { opacity: 1 },
         },
+        slide: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      perspective: {
+        1000: '1000px',
       },
       colors:{
         primary:'#664343',

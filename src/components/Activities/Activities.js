@@ -2,13 +2,13 @@ import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 
 const events = [
-  { id: 1, title: "رحلة الرصد الفلكي", date: "February 28, 2025", description: "رحلة لأعضاء النادي لرصد هلال شهر رمضان" },
+  { id: 1, title: "حملة أرشدني", date: "", description: "" },
   
 ];
 
 const Activities = () => {
   return (
-    <div className=" py-12">
+    <div className=" py-12" id="Activities">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
           النشاطات القادمة
