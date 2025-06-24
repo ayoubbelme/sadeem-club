@@ -1,28 +1,84 @@
 import { FaFacebook, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+
+const iconVariants = {
+    hidden: { opacity: 0, scale: 0.5, y: 50 },
+    visible: (i) => ({
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        transition: {
+            delay: i * 0.2,
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+        },
+    }),
+};
 
 const ContactUs = () => {
     return (
-        <div className="py-24 px-6 flex flex-col items-center text-center" id="ContactUs">
-            <h1 className="text-4xl font-semibold text-gray-800 mb-6">اتصل بنا</h1>
-            <p className="text-gray-600 mb-6">
-            يسعدنا أن نسمع منك! تواصل معنا عبر وسائل التواصل الاجتماعي أو أرسل لنا بريدًا إلكترونيًا.
-            </p>
-            <div className="flex space-x-20 md:space-x-20 lg:space-x-36 mt-6 ">
-                <a href="https://www.facebook.com/profile.php?id=100089022945764" target="_blank" rel="noopener noreferrer" 
-                    className="text-primary hover:text-blue-600 text-7xl sm:text-9xl md:text-7xl lg:text-9xl transition duration-300 ease-in-out transform hover:scale-110 border-none">
-                    <FaFacebook />
-                </a>
-                <a href="https://www.instagram.com/sadeemclub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" 
-                    className="text-primary hover:text-pink-600 text-7xl sm:text-6xl md:text-7xl lg:text-9xl transition duration-300 ease-in-out transform hover:scale-110">
-                    <FaInstagram />
-                </a>
-                <a href="https://mail.google.com/mail/u/0/#inbox?compose=jrjtXLCPcKMdJGllzfcMbMxMgZzDKzpLjNpDFRlTQZxTrqTPDbQvKQvDbWtjLPDrncnDcfTr" 
-                    className="text-primary hover:text-red-600 text-7xl sm:text-6xl md:text-7xl lg:text-9xl transition duration-300 ease-in-out transform hover:scale-110" target='_blank'>
-                    
-                    <FaEnvelope />
-                </a>
+        <motion.div
+            id="ContactUs"
+            className="py-24 px-6 bg-gradient-to-br flex flex-col items-center text-center"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
+            <motion.h1
+                className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4"
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+            >
+                اتصل بنا
+            </motion.h1>
+
+            <motion.p
+                className="text-lg md:text-xl text-gray-600 max-w-2xl mb-10 leading-relaxed"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+            >
+                يسعدنا أن نسمع منك! تواصل معنا عبر وسائل التواصل الاجتماعي أو أرسل لنا بريدًا إلكترونيًا.
+            </motion.p>
+
+            <div className="flex flex-wrap justify-center gap-10 mt-6">
+                {[{
+                    href: "https://www.facebook.com/profile.php?id=100089022945764",
+                    icon: <FaFacebook />,
+                    color: "text-blue-600 hover:bg-blue-50",
+                    label: "Facebook"
+                }, {
+                    href: "https://www.instagram.com/sadeemclub",
+                    icon: <FaInstagram />,
+                    color: "text-pink-500 hover:bg-pink-50",
+                    label: "Instagram"
+                }, {
+                    href: "mailto:sadeemclub@gmail.com",
+                    icon: <FaEnvelope />,
+                    color: "text-red-500 hover:bg-red-50",
+                    label: "Email"
+                }].map((item, i) => (
+                    <motion.a
+                        key={item.label}
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={item.label}
+                        className={`w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center text-4xl transition-transform duration-300 hover:scale-110 ${item.color}`}
+                        variants={iconVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        custom={i}
+                    >
+                        {item.icon}
+                    </motion.a>
+                ))}
             </div>
-        </div>
+        </motion.div>
     );
 };
 

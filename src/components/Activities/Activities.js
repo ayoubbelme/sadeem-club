@@ -1,43 +1,78 @@
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const events = [
-  { id: 1, title: "حملة أرشدني", date: "", description: "" },
-  
+  {
+    id: 1,
+    title: "حملة أرشدني",
+    date: "2025-?-?",
+    description: "حملة توعوية للناجحين في شهادة البكالوريا حول الحياة الجامعية و كيفية اختيار التخصص الجامعي.",
+  },
+
 ];
+
+const itemVariants = {
+  hidden: { opacity: 0, x: 50 },
+  visible: (i) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: i * 0.2, duration: 0.6 },
+  }),
+};
 
 const Activities = () => {
   return (
-    <div className=" py-12" id="Activities">
-      <div className="max-w-5xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+    <section id="Activities" className="py-24 px-6 bg-gradient-to-br ">
+      <div className="max-w-5xl mx-auto">
+        <motion.h2
+          className="text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-12"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           النشاطات القادمة
-        </h2>
-        
-        <div className="relative border-l-4 border-gray-300 pl-6 ">
-          {events.map((event, index) => (
-            <div key={event.id} className="mb-8 relative">
-              {/* Timeline Circle */}
-              <div className="absolute left-[-1.3rem] top-2 bg-white rounded-full flex items-center justify-center">
-                <FaCheckCircle className="text-primary text-xl" />
-              </div>
+        </motion.h2>
 
-              {/* Event Content */}
-              <div className="p-6 rounded-lg shadow-md bg-white">
-                <h3 className="text-xl font-semibold text-gray-800">{event.title}</h3>
-                <p className="text-sm text-gray-500">{event.date}</p>
-                <p className="text-gray-600 mt-2">{event.description}</p>
-              </div>
+        {events.length > 0 ? (
+          <div className="relative border-r-4 border-primary border-opacity-40 pr-6">
+            {events.map((event, index) => (
+              <motion.div
+                key={event.id}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={itemVariants}
+                className="mb-12 relative"
+              >
+                {/* Icon Bubble */}
+                <div className="absolute -right-6 top-4 bg-white rounded-full p-1 shadow">
+                  <FaCheckCircle className="text-primary text-xl" />
+                </div>
 
-              {/* Connector Line */}
-              {index !== events.length - 1 && (
-                <div className="absolute left-[-0.5rem] top-8 h-full w-1 "></div>
-              )}
-            </div>
-          ))}
-        </div>
+                {/* Content Card */}
+                <div className="bg-white shadow-lg p-6 rounded-xl text-right">
+                  <h3 className="text-xl font-bold text-gray-800">{event.title}</h3>
+                  <p className="text-sm text-primary mt-1">{event.date}</p>
+                  <p className="text-gray-600 mt-2 leading-relaxed">{event.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <motion.p
+            className="text-center text-gray-500"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            لا توجد نشاطات قادمة حالياً.
+          </motion.p>
+        )}
       </div>
-    </div>
+    </section>
   );
 };
 
